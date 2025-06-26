@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Metro Ticket Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Metro Booking Portal</h1>
+    <div class="top-bar">
+      <input type="text" placeholder="Search stations or routes..." />
+      <button id="toggle-theme">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="ticket-form">
+      <h2>Book Your Ticket</h2>
+      <form>
+        <label for="from">From</label>
+        <select id="from">
+          <option>Select Station</option>
+          <option>Central</option>
+          <option>North Gate</option>
+          <option>City Center</option>
+          <option>Airport</option>
+        </select>
+
+        <label for="to">To</label>
+        <select id="to">
+          <option>Select Station</option>
+          <option>Central</option>
+          <option>North Gate</option>
+          <option>City Center</option>
+          <option>Airport</option>
+        </select>
+
+        <label for="tickets">Tickets</label>
+        <input type="number" id="tickets" min="1" max="10" value="1" />
+
+        <label for="date">Date</label>
+        <input type="date" id="date" />
+
+        <button type="submit">Purchase</button>
+      </form>
+    </section>
+
+    <section class="route-dir">
+      <h2>Available Routes</h2>
+      <ul>
+        <li>Central → North Gate</li>
+        <li>North Gate → City Center</li>
+        <li>City Center → Airport</li>
+      </ul>
+    </section>
+
+    <section class="location">
+      <h2>Find Nearby Stations</h2>
+      <p>Click below to locate nearest metro stations.</p>
+      <button>📍 Find My Location</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Metro Services | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const toggleBtn = document.getElementById('toggle-theme');
+    const root = document.documentElement;
+
+    toggleBtn.addEventListener('click', () => {
+      const theme = root.getAttribute('data-theme');
+      const newTheme = theme === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', newTheme);
+      toggleBtn.textContent = newTheme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    });
+  </script>
+</body>
+</html>
